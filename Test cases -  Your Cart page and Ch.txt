@@ -1,0 +1,138 @@
+TEST CASES -  Your Cart page and Checkout: Your Information page
+
+Test case 1: "Continue Shopping" button
+Pre-requisite: user must click on the Cart icon on the Products page
+- user is located on the Your Cart page "https://www.saucedemo.com/cart.html"
+- user clicks on the "Continue Shopping" button
+Expected result: user is redirected to the Products page "https://www.saucedemo.com/inventory.html"
+
+
+Test case 2: "Checkout" button
+Pre-requisite: user must click on your Cart icon on the Products page
+- user is located on the Your Cart page "https://www.saucedemo.com/cart.html"
+- user clicks on the "Checkout" button
+Expected result: user is redirected to the Checkout page "https://www.saucedemo.com/checkout-step-one.html"
+
+Test case 3: Emptying the Cart 
+Pre-requisite: user must click on your Cart icon on the Products page
+Pre-requisite: The product "Sauce Labs Backpack" is added to the cart
+- user is located on the Your Cart page "https://www.saucedemo.com/cart.html"
+- user clicks on the "Remove" button on "Sauce Labs Backpack"
+Expected result: "Sauce Labs Backpack" will be removed from the Cart and dissapears from the list
+- the red circle on the Cart icon will dissapear
+
+Test case 4: Partial removal from the Cart
+Pre-requisite: user must click on your Cart icon on the Products page
+Pre-requisite: "Sauce Labs Backpack", "Sauce Labs Bike Light" and "Sauce Labs Bolt T-Shirt" are already added to the Cart
+- user is located on the Your Cart page "https://www.saucedemo.com/cart.html"
+- the number of products inside the red circle is 3
+- user clicks on the "Remove" button of the "Sauce Labs Backpack"
+Expected result: "Sauce Labs Backpack" will be removed from the Cart and dissapears from the list
+-the number in the red circle on the Cart decrements by 1 and amounts to 2.
+
+Test case 5: Your cart items
+pre-requisite: "Sauce Labs Backpack" and "Sauce Labs Bike Light" are already added to the Cart
+pre-requisite: click on your cart icon on the Products page
+- user in on Your cart page "https://www.saucedemo.com/cart.html"
+- user is looking at the list of products in Your cart page list
+Expected result: The products in the cart are displayed in the order and format like this:
+Sauce Labs Backpack
+"carry.allTheThings() with the sleek, streamlined Sly Pack that melds uncompromising style with unequaled laptop and tablet protection."
+$29.99
+Sauce Labs Bike Light
+"A red light isn't the desired state in testing but it sure helps when riding your bike at night. Water-resistant with 3 lighting modes, 1 AAA battery included."
+$9.99
+
+Test case 6: Item review redirect (title click)
+Pre-requisite: user must click on the Cart icon
+Pre-requisite:The product "Sauce Labs Backpack" is added to the cart
+- user is on the Your Cart page "https://www.saucedemo.com/cart.html"
+- user hovers on the title of any of the products
+- the title changes color to green
+- user clicks on the title of any of the products
+Expected result: The user is redirected to "https://www.saucedemo.com/inventory-item.html?id=4"
+
+-------------------------------------------------------------------------------------------------------
+ TEST CASES
+pre-requisite:
+-user must be logged in the application
+-user clicks on your cart icon on Products page
+-user clicks on checkout on Your cart page
+
+
+Test case 1: cancel button
+- user is on the Checkout: Your Information page "https://www.saucedemo.com/checkout-step-one.html"
+- user clicks on the Cancel button
+Expected result: user is redirected back to Your cart page "https://www.saucedemo.com/cart.html"
+
+Test case 2: successful checkout
+- user is on the Checkout: Your Information page "https://www.saucedemo.com/checkout-step-one.html"
+- user enters "Frosina" in the First Name field 
+- user enters "Blazheska" in the Last Name field
+- user enters "1000" in the Zip/Postal code field
+- user clicks on the "Continue" button 
+Expected result: The user is redirected to the Checkout: Overview page: "https://www.saucedemo.com/checkout-step-two.html"
+ 
+Test case 3: Error: First Name is required - empty name field
+- user is on the Checkout: Your Information page "https://www.saucedemo.com/checkout-step-one.html"
+- user leaves the First Name field empty
+- user clicks on the "Continue" button 
+Expected result: an error message saying: "Error: First Name is required" pops out.
+
+Test case 4: Error: Last Name is required - empty last name field
+- user is on the Checkout: Your Information page "https://www.saucedemo.com/checkout-step-one.html"
+- user enters "Frosina" in the First Name field
+- user leaves the Last Name field empty 
+- user clicks on the "Continue" button 
+Expected result: an error message saying: "Error: Last Name is required" pops out.
+
+Test case 5: Error: Postal Code is required - empty zip code field
+- user is on the Checkout: Your Information page "https://www.saucedemo.com/checkout-step-one.html"
+- user enters "Frosina" in the First Name field
+- user enters "Blazheska" in the Last Name field
+- user leaves the Zip/Postal code field empty
+- user clicks on the "Continue" button 
+Expected result: an error message saying: "Error: Postal Code is required" pops out.
+
+Test case 6: close error message
+- user is on the Checkout: Your Information page "https://www.saucedemo.com/checkout-step-one.html"
+- user clicks on the "Continue" button
+- an error message saying: "Error: First Name is required" pops out.
+- x button is visible on the top right corner of the error message placeholder
+- user clicks on the x button
+Expected result: the error message is closed
+
+Test case 7: reset state - refresh browser button 
+- user is on the Checkout: Your Information page "https://www.saucedemo.com/checkout-step-one.html"
+- user enters "Frosina" in the First Name field
+- user enters "Blazheska" in the Last Name field
+- user enters "1000" in the Zip/Postal code field
+- user clicks on the refresh browser button 
+Expected result: the inputs are removed from the Checkout: Your Information page
+
+Test case 8: reset state - refresh browser button (with an error message, with pressing continue)
+- user is on the Checkout: Your Information page "https://www.saucedemo.com/checkout-step-one.html"
+- user clicks on Continue button
+- an error message  saying "Error: First Name is required" pops out
+- user clicks on the refresh browser button 
+Expected result: the error message dissapears from the Checkout: Your Information page
+and the warnings are removed from the Checkout: Your Information page
+
+Test case 9: reset state - cancel and back to page (without error message, without pressing continue)
+- user is on the Checkout: Your Information page "https://www.saucedemo.com/checkout-step-one.html"
+- user enters "Frosina" in the First Name field
+- user enters "Blazheska" in the Last Name field
+- user enters "1000" in the Zip/Postal code field
+- user clicks on Cancel button
+- user clicks on the Checkout button 
+Expected result: the warnings are removed from the Checkout: Your Information page
+
+Test case 10: reset state - browser refresh (with error message, with pressing continue)
+- user is on the Checkout: Your Information page "https://www.saucedemo.com/checkout-step-one.html"
+- user clicks on the continue button
+- an error message  saying "Error: First Name is required" pops out
+- user clicks on the Cancel button
+- user clicks on the Checkout button on Your Cart page
+Expected result: the error message dissapears from the Checkout: Your Information page and
+ the warnings are removed from the Checkout: Your Information page
+

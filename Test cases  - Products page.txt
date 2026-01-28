@@ -1,0 +1,198 @@
+TEST CASES - Products page
+
+Pre-requisite:
+- user must be logged in the application
+- user must be located on the Products page "https://www.saucedemo.com/inventory.html"
+
+Test case 1: Sort by Name (A to Z)
+
+- user click on the dropdown menu
+- user hovers the option "Name (A to Z)"
+- option changes its color to blue
+- user selects option "Name (A to Z)"
+- the items are sorted ascendingly by title
+Expected result:
+- When the user hover over the option "Name A-Z", the option changes the color to blue 
+-When the user click on the "Name A-Z" option, the product list is sortedn ascendingly (from A to Z) by product title.
+
+Test case 2: Sort by Name (Z to A)
+- user click on the dropdown menu
+- user hovers the option "Name (Z to A)"
+- option changes its color to blue
+- user selects option "Name (Z to A)"
+- items are sorted descendingly by title
+Expected result:
+- When the user hover over the option "Name Z-A", the option changes the color to blue 
+-When the user click on the "Name Z-A" option, the product list is sortedn descendingly (from A to Z) by product title.
+
+Test case 3: Sort by price (low to high)
+- user click on the dropdown menu
+- user hovers the option "Price (low to high)"
+- option changes its color to blue
+- user selects option "Price (low to high)"
+- items are sorted ascendingly by price
+Expected result:
+- When the user hover over the option "Price (low to high)", the option changes the color to blue 
+-When the user click on the "Price (low to high)" option, the product list is sortedn ascendingly (from low to high) by product price.
+
+Test case 4: Sort by price (high to low)
+- user click on the dropdown menu
+- user hovers the option "Price (high to low))"
+- option changes its color to blue
+- user selects option "Price (high to low)"
+- items are sorted descendingly by price
+Expected results:
+- When the user hover over the option "Price (high to low)", the option changes the color to blue 
+-When the user click on the "Price (high to low)" option, the product list is sortedn descendingly (from high to low) by product price.
+
+Test case 5:
+Pre-requisite: The cart icon does not display a red circle (there are no products in the cart at the beginning)
+Pre-requisite: Make sure "Sauce Labs Backpack" is available to purchase ( some amounts of the product is present in the databse)
+
+- user is located on the product "Sauce Labs Backpack"
+- "Add to cart" button changes its text to "Remove"
+- border color of the button changes to red
+- user clicks on the "Add to card" button
+- red circle appears on the cart button with the number 1 inside of it
+Expected results:
+-The button changes its statw to "Remove"
+-The border color of the button changes to red
+-A red circle appears on the cart button with the number 1 inside of it
+
+Test case 6:
+Pre-requisite: Make sure "Sauce Labs Bike Light", "Sauce Labs Bolt T-Shirt" and "Sauce Labs Fleece Jacket" are available to purchase 
+
+- user clicks on the "Add to card" button on "Sauce Labs Bike Light", "Sauce Labs Bolt T-Shirt" and "Sauce Labs Fleece Jacket"
+Expected results:
+-The buttons "Add to card" changes its state to "Remove" 
+-The border color of the buttons changes to red
+-The number inside the red circle on the cart button increments for 3.
+ 
+Test case 7: Single item removal 
+Pre-requisite: "Sauce Labs Backpack" id already addet to cart: There is a red circle on the cart button with the number 1 inside
+Pre-requisite: Make sure "Sauce Labs Backpack" is available to purchase ( some amounts of the product is present in the databse)
+
+-user is located on the product "Sauce Labs Backpack"
+-user clicks on the "Remove" button
+Expected results:
+-The red circle with number inside of it dissapears from the cart icon
+-The button changes its state to "Add to cart"
+- The button changes the border color to the default grey
+
+Test case 8: Multiple items removal 
+Pre-requisite: multiple products are already added: There is a red circle on the cart button with the number 2 inside
+Pre-requisite: Make sure "Sauce Labs Bike Light", "Sauce Labs Bolt T-Shirt" and "Sauce Labs Fleece Jacket" are available to purchase 
+
+- user is located on the product "Sauce Labs Backpack"
+- user clicks on the "Remove" button
+- user is located on the product "Sauce Labs Bolt T-Shirt"
+- user clicks on the "Remove" button
+Expected results:
+- The number inside the red circle on the cart button changes to 1
+- The button "Remove" on each product changes its state to "Add to cart"
+- The button changes the border color to the default green
+
+
+Test case 9: Item review redirect (title click)
+Pre-requisite: Make sure "Sauce Labs Backpack" is available to purchase ( some amounts of the product is present in the databse)
+
+-user hovers over the title of the product "Sauce Labs Backpack"
+-title changes its color to green 
+-user click on the product title "Sauce Labs Backpack"
+Expected results:
+-When the user hover the mouse over the title, the title changes its color to green
+-When the user clics on the title, the user is redirected to https://www.saucedemo.com/inventory-item.html?id=4
+
+Test case 10: Item review redirect (picture click)
+Pre-requisite: Make sure "Sauce Labs Backpack" is available to purchase ( some amounts of the product is present in the databse)
+
+- user is located on the product "Sauce Labs Backpack"
+- user clicks on the picture of the product
+
+Expected results:
+-When the user clics on the title, the user is redirected to https://www.saucedemo.com/inventory-item.html?id=4
+---------------------------------------------------------------------------------------
+
+TEST CASES: Header
+Pre-requisite: user must be logged in the application
+
+
+Test case 1:
+- user is on any of the pages on the application (except Login page)
+- user clicks on the cart icon
+Expected results:
+-The user is redirected to the "Your Cart" page https://www.saucedemo.com/cart.html
+
+
+Test case 2: All the items
+pre-condition: user is located on any of the pages on the application (except Login page and Product page)
+
+- user clicks on the Burger menu 
+- a menu with "All the items", "About", "Logout" and "Reset App State" pops out 
+- user clicks on "All the items" option
+Expected result:
+- user is redirected to the Products page https://www.saucedemo.com/inventory.html
+-the application state is not changed
+
+Test case 3: About
+pre-condition: user is located on any of the pages on the application (except Login page and Product page)
+
+- user clicks on the Burger menu 
+- a menu with "All the items", "About", "Logout" and "Reset App State" pops out 
+- user clicks on "About" option
+Expected result:
+- user is redirected to "https://saucelabs.com/"
+-the application state is not changed
+
+Test case 4: Logout
+pre-condition: user is located on any of the pages on the application (except Login page)
+
+- user clicks on the Burger menu 
+- a menu with "All the items", "About", "Logout" and "Reset App State" pops out 
+- user clicks on "Logout" option
+Expected result:
+- user is redirected to the Login page "https://www.saucedemo.com/"
+
+Test case 4: Reset App State
+pre-condition: user is located on any of the pages on the application (except Login page)
+
+- user clicks on the Burger menu 
+Pre-requisite: Make sure "Sauce Labs Bike Light", "Sauce Labs Bolt T-Shirt" and "Sauce Labs Fleece Jacket" are available to purchase 
+
+- "Sauce Labs Bike Light", "Sauce Labs Bolt T-Shirt" and "Sauce Labs Fleece Jacket" are added to Cart
+- a menu with "All the items", "About", "Logout" and "Reset App State" pops out 
+- user clicks on "Reset App State" option
+Expected result:
+- the red circle on the cart icon is removed
+- the cart is emptied
+- "Sauce Labs Bike Light", "Sauce Labs Bolt T-Shirt" and "Sauce Labs Fleece Jacket" (button state: REMOVED) are reselected (button state changes to "Add to cart")
+
+Test case 4: X button
+pre-condition: the user is on any of the pages on the application (except Login page)
+- the user clicks on the Burger menu  
+- the user clicks on "All the items"
+- the user clicks on the "X" button in the upper right corner
+Expected result:
+- the Burger menu will be closed
+
+
+-----------------------------------------------------------------------------------------
+
+Test cases: Footer
+Pre-requisite: user must be logged in the application
+*NOTE: user can be on any of the pages on the application (except Login page)
+
+Test case 1:
+- user clicks on the Twitter logo in the footer
+Expected result:
+New tab opens to: "https://x.com/saucelabs"
+
+Test case 2:
+- user clicks on the Facebook logo in the footer
+Expected result:
+New tab opens to: "https://www.facebook.com/saucelabs"
+
+Test case 3:
+- user clicks on the LinkedIn logo in the footer
+Expected result:
+New tab opens to: "https://www.linkedin.com/company/sauce-labs/"

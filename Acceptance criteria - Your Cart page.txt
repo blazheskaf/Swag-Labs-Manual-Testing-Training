@@ -1,0 +1,148 @@
+Acceptance criteria - Your Cart page and Checkout: Your Information page
+Pre-requisite: user must be logged in the application
+
+Scenario 1: "Continue Shopping" button
+Pre-requisite: user must click on the Cart icon on the Products page
+GIVEN the user is located on the Your Cart page "https://www.saucedemo.com/cart.html"
+WHEN the user clicks on the "Continue Shopping" button
+THEN the user is redirected to the Products page "https://www.saucedemo.com/inventory.html"
+
+Scenario 2: "Checkout" button
+Pre-requisite: user must click on your Cart icon on the Products page
+GIVEN the user is located on the Your Cart page "https://www.saucedemo.com/cart.html"
+WHEN the user clicks on the "Checkout" button
+THEN the user is redirected to the Checkout page "https://www.saucedemo.com/checkout-step-one.html"
+
+Scenario 3: Emptying the Cart 
+Pre-requisite: user must click on your Cart icon on the Products page
+Pre-requisite: a single product is already added to the Cart
+GIVEN the user is located on the Your Cart page "https://www.saucedemo.com/cart.html"
+WHEN the user clicks on the "Remove" button of the already added product
+THEN the product will be removed from the Cart 
+AND dissapears from the list 
+AND the red circle on the Cart icon will dissapear
+
+Scenario 4: Partial removal from the Cart
+Pre-requisite: user must click on your Cart icon on the Products page
+Pre-requisite: multiple products are already added to the Cart
+GIVEN the user is located on the Your Cart page "https://www.saucedemo.com/cart.html"
+WHEN the user clicks on the "Remove" button of the already added products
+THEN the products will be removed from the Cart
+AND the removed items dissapear from the list
+AND the number inside the red circle on the Cart icon will decrement by the number of the removed items.
+
+Scenario 5: Your cart items
+pre-requisite: user must select more than two products from the Products page 
+pre-requisite: click on your cart icon on the Products page
+GIVEN the user in on Your cart page "https://www.saucedemo.com/cart.html"
+WHEN the user is looking at the list of products in Your cart page list
+THEN every product has these attributes:
+	-title
+	-description
+	-price (example format: $50.00, dollar sign before the price and price rounded up to two decimals)
+AND the products are listed one by one as they were selected in the Products page
+
+
+Scenario 6: Item review redirect (title click)
+Pre-requisite: user must click on the Cart icon
+Pre-requisite: a products is already added to the Cart
+GIVEN the user is on the Your Cart page "https://www.saucedemo.com/cart.html"
+WHEN the user hovers on the title of any of the products
+AND the title changes color to green
+AND the user clicks on the title of any of the products
+THEN the user is redirected to "https://www.saucedemo.com/inventory-item.html?id={id}"
+AND the {id} of the url corresponds to the selected item
+
+-------------------------------------------------------------------------------------------------------------
+
+
+Acceptance criteria: Checkout: Your Information
+pre-requisite:
+-user must be logged in the application
+-user clicks on your cart icon on Products page
+-user clicks on checkout on Your cart page
+
+Scenario 1: cancel button
+
+GIVEN the user is on the Checkout: Your Information page "https://www.saucedemo.com/checkout-step-one.html"
+WHEN the user clicks on the Cancel button
+THEN the user is redirected back to Your cart page "https://www.saucedemo.com/cart.html"
+
+Scenario 2: successful checkout
+GIVEN the user is on the Checkout: Your Information page "https://www.saucedemo.com/checkout-step-one.html"
+AND the user enters First Name 
+AND the user enters a Last Name 
+AND the user enters a Zip/Postal code
+WHEN the user clicks on the "Continue" button 
+THEN the user is redirected to the Checkout: Overview page: "https://www.saucedemo.com/checkout-step-two.html"
+ 
+Scenario 3: Error: First Name is required - empty name field
+GIVEN the user is on the Checkout: Your Information page "https://www.saucedemo.com/checkout-step-one.html"
+AND the user leaves the First Name field empty
+WHEN the user clicks on the "Continue" button 
+THEN an error message saying: "Error: First Name is required" pops out.
+
+Scenario 4: Error: Last Name is required - empty last name field
+GIVEN the user is on the Checkout: Your Information page "https://www.saucedemo.com/checkout-step-one.html"
+AND the user enters a First Name
+AND the user leaves the Last Name field empty 
+WHEN the user clicks on the "Continue" button 
+THEN an error message saying: "Error: Last Name is required" pops out.
+
+Scenario 5: Error: Postal Code is required - empty zip code field
+GIVEN the user is on the Checkout: Your Information page "https://www.saucedemo.com/checkout-step-one.html"
+AND the user enters a First Name
+AND the user enters a Last Name
+AND the user leaves the Zip/Postal code field empty
+WHEN the user clicks on the "Continue" button 
+THEN an error message saying: "Error: Postal Code is required" pops out.
+
+Scenario 6: close error message
+GIVEN the user is on the Checkout: Your Information page "https://www.saucedemo.com/checkout-step-one.html"
+AND an error message pops out
+AND x button is visible on the top right corner of the error message placeholder
+WHEN the user clicks on the x button
+THEN the error message is closed
+
+Scenario 7: reset state - refresh browser button 
+GIVEN the user is on the Checkout: Your Information page "https://www.saucedemo.com/checkout-step-one.html"
+AND the user enters some value in the fileds
+WHEN the user clicks on the refresh browser button 
+THEN the inputs are removed from the Checkout: Your Information page
+
+Scenario 8: reset state - refresh browser button (with an error message, with pressing continue)
+GIVEN the user is on the Checkout: Your Information page "https://www.saucedemo.com/checkout-step-one.html"
+AND the user clicks on Continue button
+AND error message pops out
+WHEN the user clicks on the refresh browser button 
+THEN the error message dissapears from the Checkout: Your Information page
+AND the warnings are removed from the Checkout: Your Information page
+
+Scenario 9: reset state - cancel and back to page (without error message, without pressing continue)
+GIVEN the user is on the Checkout: Your Information page "https://www.saucedemo.com/checkout-step-one.html"
+AND the user puts some value in the fields
+AND the user clicks on Cancel button
+WHEN the user clicks on the Checkout button 
+THEN the warnings are removed from the Checkout: Your Information page
+
+Scenario 10: reset state - browser refresh (with error message, with pressing continue)
+GIVEN the user is on the Checkout: Your Information page "https://www.saucedemo.com/checkout-step-one.html"
+AND the user clicks on the continue button
+AND error message pops out
+AND the user clicks on the Cancel button
+WHEN the user clicks on the Checkout button on Your Cart page
+THEN the error message dissapears from the Checkout: Your Information page
+AND the warnings are removed from the Checkout: Your Information page
+
+
+
+
+
+
+
+
+
+
+
+
+

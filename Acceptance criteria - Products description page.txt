@@ -1,0 +1,65 @@
+Acceptance criteria - Products description page
+
+Pre-requisite:  
+- user must be logged in the application
+- user must be located on  a page where the products are visible
+- user clicks on the title of any product
+
+Scenario 1: Page Layout
+GIVEN the user is located on the Product Description page of any product "https://www.saucedemo.com/inventory-item.html?id={id}"
+WHEN the user is looking at the page 
+THEN the page looks like:
+-Picture of the product
+-Product title
+-Description
+-Price (example format: $50.00, dollar sign before the price and price rounded up to two decimals)
+
+Scenario 2: Back to products button
+GIVEN the user is located on the Product Description page of any product "https://www.saucedemo.com/inventory-item.html?id={id}"
+WHEN the user clicks on the Back to products button
+THEN the user is redirected to the Products page "https://www.saucedemo.com/inventory.html"
+
+Scenario 3: Add to cart button when the Cart is empty
+pre-requisite: the user has not added any products to the cart yet.
+GIVEN the user is located on the Product Description page of any product "https://www.saucedemo.com/inventory-item.html?id={id}"
+WHEN the user clicks on the Add to cart button
+THEN а red circle with the number 1 appears on the Cart icon 
+AND the button changes its state to Remove
+
+Scenario 4: Add to cart button when there are some products in the Cart
+pre-requisite: the user has added some products before
+GIVEN the user is located on the Product Description page of any product "https://www.saucedemo.com/inventory-item.html?id={id}"
+WHEN the user clicks on the Add to cart button
+THEN the number in the red circle on the Cart icon decrements by 1
+AND the button changes its state to Remove
+
+Scenario 5:Remove button, single product
+pre-requisite: The Cart is empty
+
+GIVEN the user is located on the Product Description page of any product "https://www.saucedemo.com/inventory-item.html?id={id}"
+AND the user clicks on the Add to cart button
+AND the state of the button changes to Remove
+AND the red circle with number 1 appears on the Cart icon
+WHEN the user clicks on the Remove button
+THEN the button changes its state to Add to cart
+AND the red circle dissapears from the Cart icon
+
+Scenario 6:Remove button, multiple products
+pre-requisite: There are some products in the Cart already
+
+GIVEN the user is located on the Product Description page of any product "https://www.saucedemo.com/inventory-item.html?id={id}"
+AND the user clicks on the Add to cart button
+AND the state of the button changes to Remove
+AND the number inside the red circle on the Cart icon increments by 1
+WHEN the user clicks on the Remove button
+THEN the button changes its state to Add to cart
+AND the number inside the red circle decrements by 1
+
+
+
+
+
+
+
+
+

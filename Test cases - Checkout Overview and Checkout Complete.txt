@@ -1,0 +1,85 @@
+
+TEST CASES - Checkout Overview and Checkout Complete
+
+
+Pre-requisites
+- user must be logged in the application
+- user must click on the Cart icon
+- user must click on the Checkout button
+- user must enter some values in the First Name, Last name and Zip/Postal code fields and click on the Continue button
+
+Test case 1: Cancel button
+- user is located on the Checkout: Overview page "https://www.saucedemo.com/checkout-step-two.html"
+- user clicks on the Cancel button 
+Expected result: user is redirected to the Products page "https://www.saucedemo.com/inventory.html"
+
+Test case 2: Finish button
+- user in on the Checkout: Overview page "https://www.saucedemo.com/checkout-step-two.html"
+- user clicks on the Finish button
+Expected result: user is redirected back to the Checkout: Complete! page "https://www.saucedemo.com/checkout-complete.html"
+
+Test case: Overview page
+pre-requisite: user select Sauce Labs Backpack, Sauce Labs Bike Light and Sauce Labs Bolt T-Shirt from the Products page
+- user is located on the Checkout: Overview page "https://www.saucedemo.com/checkout-step-two.html"
+- user the user is looking at the list of products in Checkout: Overview page
+Expected result: the products are displayed in the same order as when they were selected: Sauce Labs Backpack, Sauce Labs Bike Light and Sauce Labs Bolt T-Shirt and with the following format:
+   Sauce Labs Backpack
+carry.allTheThings() with the sleek, streamlined Sly Pack that melds uncompromising style with unequaled laptop and tablet protection.
+$29.99
+
+  Sauce Labs Bike Light
+A red light isn't the desired state in testing but it sure helps when riding your bike at night. Water-resistant with 3 lighting modes, 1 AAA battery included.
+$9.99
+
+ Sauce Labs Bolt T-Shirt
+Get your testing superhero on with the Sauce Labs bolt T-shirt. From American Apparel, 100% ringspun combed cotton, heather gray with red bolt.
+$15.99
+
+
+Test case 4: Title click
+pre-requisite: user selects Sauce Labs Backpack from the Products page
+- user is located on the Checkout: Overview page "https://www.saucedemo.com/checkout-step-two.html"
+- user hovers over the title "Sauce Labs Backpack"
+- the title color changes green
+- user clicks on the title ""Sauce Labs Backpack""
+Expected result: user is redirected to the product description page "https://www.saucedemo.com/inventory-item.html?id=4"
+
+Test case 5: Checkout Informaion
+pre-requisite: user selects "Sauce Labs Backpack" and "Sauce Labs bolt T-shirt" from the Products page
+- user is located on the Checkout: Overview page "https://www.saucedemo.com/checkout-step-two.html"
+- user is looking at the Checkout: Overview page and scroll down the page 
+Expected result: the checkout overview should be displayed in the folowing format:
+1.Payment Information:
+ SauceCard #31337
+2.Shipping Information:
+ Free Pony Express Delivery!
+3.Price Total
+Item total:
+Item total: $45.98
+Tax: $3.68
+Total:
+Total: $49.66
+NOTE:all the prices are in the following format: (example format: $50.00, dollar sign before the price and price rounded up to two decimals)
+-----------------------------------------------------------------------------
+
+TEST CASES: Checkout: Complete!
+Pre-requisites
+- user must be logged in the application
+- user must click on the Cart icon
+- user must click on the Checkout button
+- user must enter some values in the First Name, Last name and Zip/Postal code fields and click on the Continue button
+- user must click on the Finish button
+
+
+Test case 1: Checkout: Complete! 
+- user is located on the Checkout: Complete! page "https://www.saucedemo.com/checkout-complete.html"
+- user is looking at the Checkout: Complete! page
+Expected result: a message saying: "Thank you for your order!" /n "Your order has been dispatched, and will arrive just as fast as the pony can get there!" is displayed.
+
+Test case 2: Back home
+- user is located on the Checkout: Complete! page "https://www.saucedemo.com/checkout-complete.html"
+- user clicks on the green "Back home" button
+- user is redirected to the Products page "https://www.saucedemo.com/inventory.html"
+
+
+

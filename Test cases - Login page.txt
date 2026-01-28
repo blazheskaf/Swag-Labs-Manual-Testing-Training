@@ -1,0 +1,58 @@
+TEST CASES - Login page 
+
+Test case 1: successful login - PASSED
+-user is located on the login page of sauce demo website "https://www.saucedemo.com/"
+-user enters "standard_user" as username
+-user enters "secret_sauce" as password
+-user clicks on login button
+Expected result: user is redirected to the Products page "https://www.saucedemo.com/inventory.html"
+
+Test case 2: unsuccessful login, error message "Epic sadface: Username is required"- PASSED
+-user is located on the login page of sauce demo website "https://www.saucedemo.com/"
+-user enters "" in the username field
+-user enters "secret_sauce" as password
+-user clicks on login button
+Expected result: an error message "Epic sadface: Username is required" pops out.
+
+Test case 3: unsuccessful login, error message "Epic sadface: Username is required"- PASSED
+-user is located on the login page of sauce demo website "https://www.saucedemo.com/"
+-user enters "" in the username field
+-user enters "" in the password field
+-user clicks on login button
+Expected result: an error message "Epic sadface: Username is required" pops out.
+
+Test case 4: unsuccessful login, error message "Epic sadface: Password is required"- PASSED
+-user is located on the login page of sauce demo website "https://www.saucedemo.com/"
+-user enters "standard_user" as username
+-user enters "" in the password field
+-user clicks on login button
+Expected result: an error message "Epic sadface: Password is required" pops out
+
+Test case 5: unsuccessful login, error message "Epic sadface: Password is required"- PASSED
+-user is located on the login page of sauce demo website "https://www.saucedemo.com/"
+-user enters "ABcd12345$" as username
+-user enters "" in the password field
+-user clicks on login button
+Expected result: an error message "Epic sadface: Password is required" pops out
+
+Test case 6: unsuccessful login,error message "Epic sadface: Username and password do not match any user in this service" - PASSED
+-user is located on the login page of sauce demo website "https://www.saucedemo.com/"
+-user enters "standard_user" as username
+-user enters "Aaaaaaa1234$" as password
+-user clicks on login button
+Expected result: an error message "Epic sadface: Username and password do not match any user in this service" pops out
+
+Test case 7:  unsuccessful login, error message "Epic sadface: Username and password do not match any user in this service"- PASSED
+-user is located on the login page of sauce demo website "https://www.saucedemo.com/"
+-user enters "ABcd12345$" as username
+-user enters "Aaaaaaa1234$" as password
+-user clicks on login button
+Expected result: an error message "Epic sadface: Username and password do not match any user in this service" pops out
+
+Test case 8: Closing error message - PASSED
+-user is located on the login page of sauce demo website "https://www.saucedemo.com/"
+-user enters "" as a username
+-user enters "" as a password
+-an error message "Epic sadface: Username is required" pops out
+-user clicks on the x button on the top right corner of the error message placeholder
+Expected result: the error message is close

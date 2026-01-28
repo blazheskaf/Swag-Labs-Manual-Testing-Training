@@ -1,0 +1,105 @@
+Acceptance Criteria - Checkout Overview and Checkout Complete
+
+Pre-requisites
+- user must be logged in the application
+- user must click on the Cart icon
+- user must click on the Checkout button
+- user must enter some values in the First Name, Last name and Zip/Postal code fields and click on the Continue button
+
+
+Scenario 1: Cancel button
+GIVEN the user is located on the Checkout: Overview page "https://www.saucedemo.com/checkout-step-two.html"
+WHEN the user clicks on the Cancel button 
+THEN the user is redirected to the Products page "https://www.saucedemo.com/inventory.html"
+
+Scenario 2: Finish button
+
+GIVEN the user in on the Checkout: Overview page "https://www.saucedemo.com/checkout-step-two.html"
+WHEN the user clicks on the Finish button
+THEN the user is redirected back to the Checkout: Complete! page "https://www.saucedemo.com/checkout-complete.html"
+
+Scenario 3: Overview page
+pre-requisite: user must select at least one product from the Products page 
+GIVEN the user is located on the Checkout: Overview page "https://www.saucedemo.com/checkout-step-two.html"
+WHEN the user the user is looking at the list of products in Checkout: Overview page
+THEN the products are the products are displayed in the order they were added to the cart
+AND every product has these atributes:
+- title (with the quantity of that product in front of it)
+-description
+	-price (example format: $20.00, dollar sign before the price and price rounded up to two decimals)
+
+Scenario 4: Title click
+pre-requisite: user must select at least one product from the Products page 
+GIVEN the user is located on the Checkout: Overview page "https://www.saucedemo.com/checkout-step-two.html"
+WHEN the user hovers over the title of the product in the list
+AND the title color changes green
+AND the user clicks on the title of the product in the list
+THEN the user is redirected to the product description page "https://www.saucedemo.com/inventory-item.html?id={id}"
+
+Scenario 5: Checkout Informaion
+GIVEN the user is located on the Checkout: Overview page "https://www.saucedemo.com/checkout-step-two.html"
+WHEN the user is looking at the Checkout: Overview page and scroll down the page 
+THEN the checkout overview should be displayed in the folowing format:
+1.Payment Information:
+ SauceCard #31337
+2.Shipping Information:
+ Free Pony Express Delivery!
+3.Price Total
+Item total:
+ (sum of the prices of all added products)
+Tax:
+ (8% of the item total)
+Total:
+ (sum of the item total + tax)
+NOTE:all the prices are in the following format: (example format: $50.00, dollar sign before the price and price rounded up to two decimals)
+
+-----------------------------------------------------------
+
+Acceptance criteria: Checkout: Complete!
+Pre-requisites
+- user must be logged in the application
+- user must click on the Cart icon
+- user must click on the Checkout button
+- user must enter some values in the First Name, Last name and Zip/Postal code fields and click on the Continue button
+- user must click on the Finish button
+
+
+Scenario 1: Checkout: Complete! 
+GIVEN the user is located on the Checkout: Complete! page "https://www.saucedemo.com/checkout-complete.html"
+WHEN the user is looking at the Checkout: Complete! page
+THEN a message for successful checkout is displayed
+
+Scenario 2: Back home
+GIVEN the user is located on the Checkout: Complete! page "https://www.saucedemo.com/checkout-complete.html"
+WHEN the user clicks on the green "Back home" button
+THEN the user is redirected to the Products page "https://www.saucedemo.com/inventory.html"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

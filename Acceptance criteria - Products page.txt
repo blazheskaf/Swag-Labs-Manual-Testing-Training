@@ -1,0 +1,184 @@
+Acceptance criteria: Products page 
+
+Pre-requisite: user must be logged in the application
+
+Scenario 1: Sort by Name (A to Z)
+GIVEN the user is on the Products page "https://www.saucedemo.com/inventory.html"
+AND the user click on the dropdown menu
+AND the user hovers the option "Name (A to Z)"
+AND the option changes its color to blue
+WHEN the user selects option "Name (A to Z)"
+THEN the items are sorted ascendingly by title
+
+Scenario 2: Sort by Name (Z to A)
+GIVEN the user is on the Products page "https://www.saucedemo.com/inventory.html"
+AND the user click on the dropdown menu
+AND the user hovers the option "Name (Z to A)"
+AND the option changes its color to blue
+WHEN the user selects option "Name (Z to A)"
+THEN the items are sorted descendingly by title
+
+Scenario 3: Sort by Price (low to high)
+GIVEN the user is on the Products page "https://www.saucedemo.com/inventory.html"
+AND the user click on the dropdown menu
+AND the user hovers the option "Price (low to high)"
+AND the option changes its color to blue
+WHEN the user selects option "Price (low to high)"
+THEN the items are sorted ascendingly by price
+
+Scenario 4: Sort by Price (high to low)
+GIVEN the user is on the Products page "https://www.saucedemo.com/inventory.html"
+AND the user click on the dropdown menu
+AND the user hovers the option "Price (high to low))"
+AND the option changes its color to blue
+WHEN the user selects option "Price (high to low)"
+THEN the items are sorted descendingly by price
+
+Scenario 5: Adding single product
+GIVEN the user is on the Products page "https://www.saucedemo.com/inventory.html"
+WHEN the user clicks on the Add to cart button on a single product
+THEN the Add to cart button changes its text to Remove
+AND the border color of the button changes to red
+AND a red circle appears on the cart button with the number 1 inside of it
+
+Scenario 6: Adding multiple products
+Pre-requisite: one product is already added
+GIVEN the user is on the Products page "https://www.saucedemo.com/inventory.html"
+WHEN the user clicks on the Add to card button on one or more products
+THEN the number in the red circle on the card icon increments by the number of previously added products
+
+Scenario 7: single item removal
+Pre-requisite: one product is already added
+GIVEN the user is on the Products page "https://www.saucedemo.com/inventory.html"
+WHEN the user clicks on the Remove button on the already selected products
+THEN the red circle with number inside of it dissapears from the cart icon
+AND the same button changes its state to "Add to cart"
+AND changes the border color to the default grey
+
+Scenario 8: multiple items removal
+Pre-requisite: multiple products are already added
+GIVEN the user is on the Products page "https://www.saucedemo.com/inventory.html"
+WHEN the user clicks on the Remove button on one or more already selected products leaving at least one in the cart
+THEN the number in the red circle on the cart icon decrements by the number of already removed items
+
+Scenario 9: Item review redirect (title click)
+GIVEN the user is on the Products page "https://www.saucedemo.com/inventory.html"
+WHEN the user hovers on the title of any of the products
+AND the title changes color to green
+AND the user clicks on the title of any of the products
+THEN the user is redirected to "https://www.saucedemo.com/inventory-item.html?id={id}"
+AND the {id} of the url corresponds to the selected item
+
+Scenario 10: Item review redirect (picture click)
+GIVEN the user is on the Products page "https://www.saucedemo.com/inventory.html"
+WHEN the user clicks on the picture of any of the products
+THEN the user is redirected to "https://www.saucedemo.com/inventory-item.html?id={id}"
+AND the {id} of the url corresponds to the selected item
+--------------------------------------------------------------------------------
+
+Acceptance criteria: Header
+Pre-requisite: user must be logged in the application
+*NOTE: user can be on any of the pages on the application (except Login page)
+
+Scenario 1: Your cart icon
+GIVEN the user is on any of the pages on the application (except Login page)
+WHEN the user clicks on the cart icon
+THEN the user is redirected to Your Cart page
+
+Scenario 2: All the items
+GIVEN the user is on any of the pages on the application (except Login page and Product page)
+AND the user clicks on the Burger menu 
+AND a menu with "All the items", "About", "Logout" and "Reset App State" pops out  
+WHEN the user clicks on "All the items" option
+THEN the user is redirected to the Products page https://www.saucedemo.com/inventory.html
+AND the application state is not changed
+
+Scenario 3: About
+GIVEN the user is on any of the pages on the application (except Login page)
+AND the user clicks on the Burger menu 
+AND a menu with "All the items", "About", "Logout" and "Reset App State" pops out 
+WHEN the user clicks on "About" option
+THEN the user is redirected to "https://saucelabs.com/"
+
+Scenario 4: Logout
+GIVEN the user is on any of the pages on the application (except Login page)
+AND the user clicks on the Burger menu 
+AND a menu with "All the items", "About", "Logout" and "Reset App State" pops out 
+WHEN the user clicks on "Logout"
+THEN the user is redirected to the Login page "https://www.saucedemo.com/"
+
+Scenario 5: Reset App State
+GIVEN the user is on any of the pages on the application (except Login page)
+WHEN the user clicks on the Burger menu 
+AND the user clicks on "Reset App State"
+THEN the red circle on the cart icon is removed
+AND the cart is emptied
+AND the already selected items (button state: REMOVED) are reselected (button state changes to "Add to cart")
+
+Scenario 6: X button 
+GIVEN the user is on any of the pages on the application (except Login page)
+WHEN the user clicks on the Burger menu  
+AND the user clicks on any option except "Logout"
+AND the user clicks on the "X" button in the upper right corner
+THEN the Burger menu will be closed
+
+
+--------------------------------------------------------------------------------
+
+Acceptance criteria: Footer
+Pre-requisite: user must be logged in the application
+*NOTE: user can be on any of the pages on the application (except Login page)
+
+Scenario 1: Footer link Twitter
+GIVEN the user is on any of the pages on the application (except Login page)
+WHEN the user clicks on the Twitter logo in the footer
+THEN a new tab opens to: "https://x.com/saucelabs"
+
+Scenario 2: Footer link Facebook
+GIVEN the user is on any of the pages on the application (except Login page)
+WHEN the user clicks on the Facebook logo in the footer
+THEN a new tab opens to: "https://www.facebook.com/saucelabs"
+
+Scenario 3: Footer link LinkedIn
+GIVEN the user is on any of the pages on the application (except Login page)
+WHEN the user clicks on the LinkedIn logo in the footer
+THEN a new tab opens to: "https://www.linkedin.com/company/sauce-labs/"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

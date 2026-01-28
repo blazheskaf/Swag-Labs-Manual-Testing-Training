@@ -1,0 +1,51 @@
+TEST CASES - Products Description Page
+
+Pre-requisite:  
+- user must be logged in the application
+- user is located on the Products page "https://www.saucedemo.com/inventory.html"
+- user clicks on the title on Sauce Labs Backpack
+
+Test case: Page Layout
+- user is located on the Product Description page of Sauce Labs Backpack "https://www.saucedemo.com/inventory-item.html?id=4"
+- user is looking at the page 
+Expected result: the page looks like:
+Sauce Labs Backpack
+carry.allTheThings() with the sleek, streamlined Sly Pack that melds uncompromising style with unequaled laptop and tablet protection.
+$29.99
+
+Test case 2: Back to products button
+- user is located on the Product Description page of Sauce Labs Backpack "https://www.saucedemo.com/inventory-item.html?id=4"
+- user clicks on the Back to products button
+Expected result: user is redirected to the Products page "https://www.saucedemo.com/inventory.html"
+
+Test case 3: Add to cart button when the Cart is empty
+pre-requisite: the user has not added any products to the cart yet.
+- user is located on the Product Description page of Sauce Labs Backpack "https://www.saucedemo.com/inventory-item.html?id=4"
+- user clicks on the Add to cart button
+Expected result: а red circle with the number 1 appears on the Cart icon and the button changes its state to Remove
+
+Test case 4: Add to cart button when there are some products in the Cart
+pre-requisite: the user has added Sauce Labs Bolt T-Shirt to the Cart 
+- user is located on the Product Description page of Sauce Labs Backpack "https://www.saucedemo.com/inventory-item.html?id=4"
+- user clicks on the Add to cart button
+Expected result: the number in the red circle on the Cart icon increments by 1 and the button changes its state to Remove
+
+Test case 5 :Remove button, single product
+pre-requisite: The Cart is empty
+
+- user is located on the Product Description page of Sauce Labs Backpack "https://www.saucedemo.com/inventory-item.html?id=4"
+- user clicks on the Add to cart button
+- the state of the button changes to Remove
+- the red circle with number 1 appears on the Cart icon
+- the user clicks on the Remove button
+Expected result: the button changes its state to Add to cart and the red circle dissapears from the Cart icon
+
+Test case 6: Remove button, multiple products
+pre-requisite: User has added Sauce Labs Bike Light to the Cart
+
+- user is located on the Product Description page of Sauce Labs Backpack "https://www.saucedemo.com/inventory-item.html?id=4"
+- user clicks on the Add to cart button
+- the state of the button changes to Remove
+- the number inside the red circle on the Cart icon increments by 1
+- user clicks on the Remove button
+Expected result: the button changes its state to Add to cart and the number inside the red circle is 2

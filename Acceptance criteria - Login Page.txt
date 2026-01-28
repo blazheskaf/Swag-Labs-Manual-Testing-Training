@@ -1,0 +1,76 @@
+Acceptance criteria - Login Page 
+
+
+Scenario 1: Successful login
+GIVEN the user is on the login page of sauce demo website https://www.saucedemo.com/
+AND the user enters а valid username
+AND the user enters a valid password 
+WHEN the user clicks the login button 
+THEN the user is redirected to the Products page
+
+Scenario 2: Unsuccessful login, empty username
+GIVEN the user is on the login page of sauce demo website https://www.saucedemo.com/
+AND the user leaves the username field empty 
+AND the user enters a valid password 
+WHEN the user clicks the login button 
+THEN an error message "Epic sadface: Username is required" pops out.
+
+Scenario 3: Unsuccessful login, username and password fields are empty
+GIVEN the user is on the login page of sauce demo website https://www.saucedemo.com/
+AND the user leaves the username field empty
+AND the user leaves the password field empty 
+WHEN the user clicks the login button 
+THEN an error message "Epic sadface: Username is required" pops out
+
+Scenario 4: Unsuccessful login, empty password
+GIVEN the user is on the login page of sauce demo website https://www.saucedemo.com/
+AND the user enters а valid username
+AND the user leaves the password field empty 
+WHEN the user clicks the login button 
+THEN an error message "Epic sadface: Password is required" pops out
+
+Scenario 5: Unsuccessful login, empty password
+GIVEN the user is on the login page of sauce demo website https://www.saucedemo.com/
+AND the user enters аn invalid username
+AND the user leaves the password field empty 
+WHEN the user clicks the login button 
+THEN an error message "Epic sadface: Password is required" pops out
+
+Scenario 6: unsuccessful login, valid username, invalid password
+GIVEN the user is on the sauce demo website login page "https://www.saucedemo.com/"
+AND the user enters a valid username
+AND the user enters an invalid password
+WHEN the user clicks on the login button
+THEN an error message "Epic sadface: Username and password do not match any user in this service" pops out
+
+Scenario 7: unsuccessful login- invalid username, invalid password
+GIVEN the user is on the sauce demo website login page "https://www.saucedemo.com/"
+AND the user enters an invalid username
+AND the user enters an invalid password
+WHEN the user clicks on the login button
+THEN an error message "Epic sadface: Username and password do not match any user in this service" pops out
+
+Scenario 8: close error message
+GIVEN the user is on the sauce demo website login page "https://www.saucedemo.com/"
+AND an error message pops out
+AND x button is visible on the top right corner of the error message placeholder
+WHEN the user clicks on the x button
+THEN the error message is closed
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
